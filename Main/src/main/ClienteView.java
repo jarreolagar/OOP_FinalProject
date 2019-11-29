@@ -5,6 +5,7 @@
  */
 package main;
 
+import main.controlador.ConexionBD;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -16,13 +17,13 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Juan Manuel Arreola
  */
-public class ClienteGUI extends javax.swing.JFrame {
+public class ClienteView extends javax.swing.JFrame {
     //MODELO DE LA TABLA
     DefaultTableModel dtm=new DefaultTableModel();
     /**
      * Creates new form ClienteGUI
      */
-    public ClienteGUI() throws SQLException {
+    public ClienteView() throws SQLException {
         initComponents();
         String[] tituloTabla = new String[]{"ID","NOMBRE","APELLIDO","SEXO","FECHA DE NACIMIENTO","TARJETA"};
         dtm.setColumnIdentifiers(tituloTabla);
@@ -59,6 +60,7 @@ public class ClienteGUI extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Clientes");
 
         tableCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -259,23 +261,24 @@ public class ClienteGUI extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ClienteGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClienteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ClienteGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClienteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ClienteGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClienteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ClienteGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClienteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    new ClienteGUI().setVisible(true);
+                    new ClienteView().setVisible(true);
                 } catch (SQLException ex) {
-                    Logger.getLogger(ClienteGUI.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(ClienteView.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });

@@ -6,6 +6,11 @@
 package main;
 
 import java.sql.SQLException;
+import main.controlador.ClienteControlador;
+import main.modelo.ClienteModel;
+import main.modelo.ConsultasBD;
+import main.vista.ClienteVista;
+
 
 /**
  *
@@ -16,11 +21,16 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args){
         // TODO code application logic here
-       ClienteGUI guiCliente = new ClienteGUI();
-       guiCliente.setVisible(true);
+        ClienteModel cltemodel = new ClienteModel();
+        ConsultasBD cltsBD = new ConsultasBD();
+        ClienteVista view = new ClienteVista();
         
+        ClienteControlador ctrl = new ClienteControlador(view, cltemodel, cltsBD);
+        
+        ctrl.iniciarVistaCliente();
+        view.setVisible(true);
     }
     
 }
