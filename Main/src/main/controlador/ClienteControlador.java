@@ -8,7 +8,7 @@ package main.controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
-import main.ClienteView;
+//import main.ClienteView;
 import main.modelo.ClienteModel;
 import main.modelo.ConsultasBD;
 import main.vista.ClienteVista;

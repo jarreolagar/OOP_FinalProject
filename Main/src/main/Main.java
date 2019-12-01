@@ -7,9 +7,17 @@ package main;
 
 import java.sql.SQLException;
 import main.controlador.ClienteControlador;
+import main.controlador.EmpleadoControlador;
+import main.controlador.InventarioControlador;
 import main.modelo.ClienteModel;
 import main.modelo.ConsultasBD;
+import main.modelo.ConsultasEmpleadoBD;
+import main.modelo.ConsultasInventarioBD;
+import main.modelo.EmpleadoModelo;
+import main.modelo.InventarioModelo;
 import main.vista.ClienteVista;
+import main.vista.EmpleadoVista;
+import main.vista.InventarioVista;
 
 
 /**
@@ -27,10 +35,29 @@ public class Main {
         ConsultasBD cltsBD = new ConsultasBD();
         ClienteVista view = new ClienteVista();
         
+        
+        EmpleadoModelo emModel = new EmpleadoModelo();
+        ConsultasEmpleadoBD conEmpleado = new ConsultasEmpleadoBD();
+        EmpleadoVista viewEmpleado = new EmpleadoVista();
+        
+        
+        InventarioModelo modelo = new InventarioModelo();
+        ConsultasInventarioBD consulta = new ConsultasInventarioBD();
+        InventarioVista vista = new InventarioVista();
+        
+        
         ClienteControlador ctrl = new ClienteControlador(view, cltemodel, cltsBD);
+        EmpleadoControlador econtrol = new EmpleadoControlador(viewEmpleado, emModel, conEmpleado);
+        InventarioControlador controlador = new InventarioControlador(vista, modelo, consulta);
         
         ctrl.iniciarVistaCliente();
         view.setVisible(true);
+        
+        econtrol.iniciarVistaEmpleado();
+        viewEmpleado.setVisible(true);
+        
+        controlador.iniciarVistaInventario();
+        vista.setVisible(true);
     }
     
 }
