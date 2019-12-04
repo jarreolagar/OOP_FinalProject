@@ -49,7 +49,6 @@ public class ClienteControlador implements ActionListener {
 
         if (e.getSource() == vista.clienteGuardarButton) {
             cltemodel.setNombreCliente(vista.clienteNombreTextField.getText());
-            cltemodel.setApellidoCliente(vista.clienteApellidoTextField.getText());
             cltemodel.setSexo(vista.clienteSexoTextField.getText());
             cltemodel.setFechaNacimiento(vista.clienteFNTextField.getText());
             cltemodel.setTarjeta(Float.parseFloat(vista.clienteTarjetaTextField.getText()));
@@ -66,7 +65,6 @@ public class ClienteControlador implements ActionListener {
         if (e.getSource() == vista.clienteModificarButton) {
             cltemodel.setId(Integer.parseInt(vista.clienteIdTextField.getText()));
             cltemodel.setNombreCliente(vista.clienteNombreTextField.getText());
-            cltemodel.setApellidoCliente(vista.clienteApellidoTextField.getText());
             cltemodel.setSexo(vista.clienteSexoTextField.getText());
             cltemodel.setFechaNacimiento(vista.clienteFNTextField.getText());
             cltemodel.setTarjeta(Float.parseFloat(vista.clienteTarjetaTextField.getText()));
@@ -99,7 +97,6 @@ public class ClienteControlador implements ActionListener {
                 
                 vista.clienteIdTextField.setText(Integer.toString(cltemodel.getId()));
                 vista.clienteNombreTextField.setText(cltemodel.getNombreCliente());
-                vista.clienteApellidoTextField.setText(cltemodel.getApellidoCliente());
                 vista.clienteSexoTextField.setText(cltemodel.getSexo());
                 vista.clienteFNTextField.setText(cltemodel.getFechaNacimiento());
                 vista.clienteTarjetaTextField.setText(""+cltemodel.getTarjeta());
@@ -118,7 +115,6 @@ public class ClienteControlador implements ActionListener {
     public void limpiar() {
         vista.clienteIdTextField.setText(null);
         vista.clienteNombreTextField.setText(null);
-        vista.clienteApellidoTextField.setText(null);
         vista.clienteSexoTextField.setText(null);
         vista.clienteFNTextField.setText(null);
         vista.clienteTarjetaTextField.setText(null);

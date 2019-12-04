@@ -15,7 +15,6 @@ public class ClienteModel {
     
     private int id;
     private String nombreCliente;
-    private String apellidoCliente;
     private String sexo;
     private String fechaNacimiento;
     private float tarjeta;
@@ -34,14 +33,6 @@ public class ClienteModel {
 
     public void setNombreCliente(String nombreCliente) {
         this.nombreCliente = nombreCliente;
-    }
-
-    public String getApellidoCliente() {
-        return apellidoCliente;
-    }
-
-    public void setApellidoCliente(String apellidoCliente) {
-        this.apellidoCliente = apellidoCliente;
     }
 
     public String getSexo() {

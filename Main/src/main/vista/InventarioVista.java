@@ -6,7 +6,8 @@
 package main.vista;
 
 import main.modelo.ConsultasInventarioBD;
-import main.modelo.InventarioModelo;
+
+
 
 /**
  *
@@ -14,11 +15,13 @@ import main.modelo.InventarioModelo;
  */
 public class InventarioVista extends javax.swing.JFrame {
 
+    
+    
     /**
      * Creates new form InventarioVista
      */
     ConsultasInventarioBD comboBox = new ConsultasInventarioBD();
-    
+
     public InventarioVista() {
         initComponents();
         comboBox.cargarComboBox(comboBoxSucursal);
@@ -103,26 +106,26 @@ public class InventarioVista extends javax.swing.JFrame {
                                 .addComponent(jLabel5)
                                 .addGap(18, 18, 18)
                                 .addComponent(estatusInventarioTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 243, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(buscarInventarioBoton)
                             .addComponent(buscarInventarioTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(guardarInventarioBoton)
-                                .addGap(18, 18, 18)
-                                .addComponent(modificarInventarioBoton)
-                                .addGap(18, 18, 18)
-                                .addComponent(eliminarInventarioBoton)
-                                .addGap(18, 18, 18)
-                                .addComponent(limpiarInventarioBoton))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(comboBoxSucursal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(comboBoxSucursal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(85, 85, 85))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(118, 118, 118)
+                .addComponent(guardarInventarioBoton)
+                .addGap(18, 18, 18)
+                .addComponent(modificarInventarioBoton)
+                .addGap(18, 18, 18)
+                .addComponent(eliminarInventarioBoton)
+                .addGap(18, 18, 18)
+                .addComponent(limpiarInventarioBoton)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,13 +156,13 @@ public class InventarioVista extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(estatusInventarioTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(guardarInventarioBoton)
                     .addComponent(modificarInventarioBoton)
                     .addComponent(eliminarInventarioBoton)
                     .addComponent(limpiarInventarioBoton))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         pack();
@@ -199,10 +202,13 @@ public class InventarioVista extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InventarioVista().setVisible(true);
+               
+                    new InventarioVista().setVisible(true);
+                
             }
         });
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JTextField articuloInventarioTextField;
@@ -222,4 +228,5 @@ public class InventarioVista extends javax.swing.JFrame {
     public javax.swing.JButton limpiarInventarioBoton;
     public javax.swing.JButton modificarInventarioBoton;
     // End of variables declaration//GEN-END:variables
+
 }

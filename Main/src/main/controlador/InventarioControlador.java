@@ -7,10 +7,14 @@ package main.controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import main.modelo.ConsultasInventarioBD;
 import main.modelo.InventarioModelo;
 import main.vista.InventarioVista;
+import main.vista.VentasVista;
 
 /**
  *
@@ -21,7 +25,8 @@ public class InventarioControlador implements ActionListener{
     private InventarioVista vista;
     private InventarioModelo modelo;
     private ConsultasInventarioBD consulta;
-
+    
+    
     public InventarioControlador(InventarioVista vista, InventarioModelo modelo, ConsultasInventarioBD consulta) {
         this.vista = vista;
         this.modelo = modelo;
@@ -50,7 +55,6 @@ public class InventarioControlador implements ActionListener{
             modelo.setSucursal(vista.comboBoxSucursal.getSelectedItem().toString());
             //modelo.setIdSucursal(Integer.parseInt(vista.comboBoxSucursal.getSelectedItem().toString()));
             modelo.setEstatusArticulo(vista.estatusInventarioTextField.getText());
-            //
             
             if(consulta.registrarArticulo(modelo)){
                 

@@ -9,15 +9,19 @@ import java.sql.SQLException;
 import main.controlador.ClienteControlador;
 import main.controlador.EmpleadoControlador;
 import main.controlador.InventarioControlador;
+import main.controlador.VentasControlador;
 import main.modelo.ClienteModel;
 import main.modelo.ConsultasBD;
 import main.modelo.ConsultasEmpleadoBD;
 import main.modelo.ConsultasInventarioBD;
+import main.modelo.ConsultasVentasBD;
 import main.modelo.EmpleadoModelo;
 import main.modelo.InventarioModelo;
+import main.modelo.VentasModelo;
 import main.vista.ClienteVista;
 import main.vista.EmpleadoVista;
 import main.vista.InventarioVista;
+import main.vista.VentasVista;
 
 
 /**
@@ -29,7 +33,7 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args){
+    public static void main(String[] args) throws SQLException{
         // TODO code application logic here
         ClienteModel cltemodel = new ClienteModel();
         ConsultasBD cltsBD = new ConsultasBD();
@@ -46,9 +50,17 @@ public class Main {
         InventarioVista vista = new InventarioVista();
         
         
+        VentasModelo modeloventa = new VentasModelo();
+        ConsultasVentasBD consultaventa = new ConsultasVentasBD();
+        VentasVista vistaventa = new VentasVista();
+        
+        /*********************************************************************************/
+        
         ClienteControlador ctrl = new ClienteControlador(view, cltemodel, cltsBD);
         EmpleadoControlador econtrol = new EmpleadoControlador(viewEmpleado, emModel, conEmpleado);
         InventarioControlador controlador = new InventarioControlador(vista, modelo, consulta);
+        VentasControlador ventacontrolador = new VentasControlador(vistaventa, modeloventa, consultaventa);
+        
         
         ctrl.iniciarVistaCliente();
         view.setVisible(true);
@@ -58,6 +70,9 @@ public class Main {
         
         controlador.iniciarVistaInventario();
         vista.setVisible(true);
+        
+        ventacontrolador.iniciarVistaVentas();
+        vistaventa.setVisible(true);
     }
     
 }

@@ -9,16 +9,19 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import main.controlador.ConexionBD;
+import main.vista.InventarioVista;
+import main.vista.VentasVista;
 
 /**
  *
  * @author Juan Manuel Arreola
  */
 public class ConsultasInventarioBD extends ConexionBD {
-
+    
     public void cargarComboBox(JComboBox comboBoxSucursal) {
 
         PreparedStatement ps = null;
@@ -203,4 +206,5 @@ public class ConsultasInventarioBD extends ConexionBD {
         }
         return res;
     }
+    
 }
